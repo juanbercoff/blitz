@@ -1,0 +1,35 @@
+define
+
+    parenthood sub relation,
+        owns id @key,
+        relates parent,
+        relates child;
+
+    id sub attribute,
+        value string;
+    title sub attribute,
+        value string;
+    input-value sub attribute,
+        value string;
+    options sub attribute,
+        value string;
+    is-checked sub attribute,
+        value boolean;
+        
+    block sub entity,
+        owns id @key,
+        owns title,
+        plays parenthood:parent,
+        plays parenthood:child;
+    
+    page sub block;  
+
+    input sub block,
+        owns input-value;
+
+    selector sub block,
+        owns options;
+
+    checkbox sub block,
+        owns is-checked;
+    
