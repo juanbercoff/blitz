@@ -1,0 +1,12 @@
+insert $p isa page, 
+    has id "92279ee0-913e-4ba8-8cf5-cfdba6cb1b25",
+    has title "First page";
+    
+insert $i isa input,
+    has id "5f58ac19-9f38-4e15-9dd8-7633725a0e40",
+    has title "First name";
+    
+match $child isa input, has id "5f58ac19-9f38-4e15-9dd8-7633725a0e40"; 
+$parent isa page, has id "92279ee0-913e-4ba8-8cf5-cfdba6cb1b25";
+insert $parenthood(child: $child, parent: $parent) isa parenthood,
+has id "5f58ac19-9f38-4e15-9dd8-7633725a0e41";
